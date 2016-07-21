@@ -35,7 +35,9 @@ namespace FullCalender
             //Calendar Script file
             bundles.Add(new ScriptBundle("~/bundles/fullcalendarjs").Include(
                       "~/Scripts/jquery-ui-{version}.js",
-                      "~/Scripts/fullcalendar.min.js"));
+                      "~/Scripts/moment.min.js",
+                      "~/Scripts/fullcalendar.min.js",
+                      "~/Scripts/lang-all.js"));
         }
     }
 }
