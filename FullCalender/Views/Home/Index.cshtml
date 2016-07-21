@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Event Calendar</h1>
+    <div id="calendar"></div>
+</div>
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#calendar').fullCalendar({
+                theme: true,
+                editable: false,
+                lang: 'zh-tw',
+                events: {
+                    url: '@Url.Action("Events", "Home")',
+                    error: function () {
+                        alert("Error");
+                    }
+                },
+                dayClick: function (date, jsEvent, view) {
+                    alert(date);
+                },
+                eventClick: function (calEvent, jsEvent, view) {
+                }
+            });
+        });
+    </script>
+}
